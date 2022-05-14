@@ -1,3 +1,7 @@
+* {
+    margin: 0;
+}
+
 @font-face {
     font-family: geosans;
     src: url("../fonts/GeosansLight.ttf");
@@ -13,11 +17,12 @@ main {
     
 }
 
+article {
+    
+}
+
 section {
-    padding-top: 5rem;
-    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),url("../images/background-site.jpg") no-repeat center center;
-    background-size: cover;
-    background-attachment: fixed;
+    box-sizing: content-box;
 }
 
 header {
@@ -81,18 +86,31 @@ nav {
        
 }
 
+article {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 
 article h1 {
     font-size: 10vw;
     color: white;
     font-family: "DM Sans";
     margin-bottom: 0;
-    line-height: 105%;
+    line-height: 100%;
     text-align: center;
 }
 
 section {
-    
+    box-sizing: border-box;
+    padding-top: 12vh;
+    height: 75vh;
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),url("../images/background-site.jpg") no-repeat center center;
+    background-size: cover;
+    background-attachment: fixed;
+    align-items: center;
     text-shadow: 2px 2px 10px black;
     width: 100%;
     display: flex;
@@ -118,6 +136,7 @@ article h2 {
 }
 
 .container {
+    flex-wrap: wrap;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -127,18 +146,38 @@ article h2 {
 
 .box {
     box-sizing: content-box;
-    margin-top: 50px;
-    width: 25%;
+    height: 250px;
+    margin: 10px 15px;
+    margin-top: 30px;
+    font-size: 1.2em;
+    flex: 100px;
     padding: 30px 20px;
     background-color: white;
-    margin-right: 8%;
     border-radius: 20px;
     -webkit-box-shadow: 0px 0px 15px 7px rgba(0,0,0,0.37); 
     box-shadow: 0px 0px 15px 7px rgba(0,0,0,0.37);
     
 }
 
-.three {
-    margin-right: 0;
-}
 
+
+@media screen and (max-width:768px) {
+    section {
+        height: 45vh; 
+        
+    }
+    
+    .content h1 {
+        font-size: 3rem;
+    }
+    
+    .content h2 {
+        font-size: 0.9rem;
+    }
+
+    .box {
+        box-sizing: content-box;
+        flex: 100%;
+        height: 200px;
+    }
+}
